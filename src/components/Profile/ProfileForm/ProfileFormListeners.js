@@ -92,8 +92,6 @@ export const ProfileFormListeners = (
 
     //DELETE
     deleteBtn.addEventListener('click', () => {
-      console.log(isSelf)
-
       isSelf
         ? deleteUser(userProfile, 'self')
         : deleteUser(userProfile, 'admin')

@@ -9,18 +9,10 @@ import {
 } from '../ui/StatusMessagesUI/StatusMessagesUI'
 import { updateActiveLinks } from '../utils/navigation/navigation'
 
-let isRouting = false // Para evitar bucles infinitos
-
 export const router = async () => {
-  if (isRouting) return
-  isRouting = true
-
   const path = window.location.pathname
   const main = document.getElementById('app-main')
-  if (!main) {
-    isRouting = false
-    return
-  }
+  if (!main) return
   main.innerHTML = renderSpinner()
 
   let pageFunction
@@ -48,7 +40,6 @@ export const router = async () => {
       // Filtro seguridad por si ejecutamos Profile() sin pasar ningún parámetro (id). Con null permite renderizar el perfil del usuario del localStorage, con undefined daba error.
       params = null
     }
-    console.log(params)
   } else if (path === '/login') {
     pageFunction = Login
   } else if (path === '/signup') {
@@ -82,9 +73,8 @@ export const router = async () => {
     window.history.replaceState({}, '', fullPath) // Limpiamos window.history.state que habiamos configurado en navigate() (donde guardamos el sectionId: params[1] para poder hacer el scroll dentro de Profile). Ahora cuando estemos dentro de una sección de Profile y pulsemos F5, no hará scroll, sino que mostrará la primera sección de Profile
   } catch (error) {
     console.error('Router error:', error)
+    window.history.replaceState({}, '', '/')
     main.innerHTML = renderError()
-  } finally {
-    isRouting = false
   }
 }
 

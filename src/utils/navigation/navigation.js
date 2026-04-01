@@ -1,5 +1,9 @@
 import { Header } from '../../components/Header/Header'
+import { EventDetail } from '../../pages/EventDetail/EventDetail'
+import { Home } from '../../pages/Home/Home'
 import { Login } from '../../pages/Login/Login'
+import { Profile } from '../../pages/Profile/Profile'
+import { SignUp } from '../../pages/SignUp/SignUp'
 import { router } from '../../router/router'
 import { renderError } from '../../ui/StatusMessagesUI/StatusMessagesUI'
 import { getUserContext } from '../users/userHelper'
@@ -14,8 +18,7 @@ export const navigate = async (pageFunction, ...params) => {
 }
 
 const getPathFromFunction = async (pageFunction, params) => {
-  const name = pageFunction.name.toLowerCase()
-  if (name === 'home') {
+  if (pageFunction === Home) {
     // params[0] puede ser tanto el search input como category: 'music', city: 'bcn', ...
     const allParams = params[0] || null
 
@@ -26,28 +29,33 @@ const getPathFromFunction = async (pageFunction, params) => {
 
     return '/'
   }
-  if (name === 'eventdetail') {
+  if (pageFunction === EventDetail) {
     return params && params[0] ? `/event/${params[0]}` : '/event/create'
   }
-  if (name === 'profile') {
+  if (pageFunction === Profile) {
     const userContext = await getUserContext()
     const id = params[0]
-    console.log(id)
-    if (id === userContext.userProfile._id) {
+
+    if (id === userContext?.userProfile._id) {
       return `/profile`
     } else {
       return `/profile/${id}`
     }
   }
-  if (name === 'login') return '/login'
-  return `/${name}`
+  if (pageFunction === Login) return '/login'
+  if (pageFunction === SignUp) return '/signup'
 }
 
 export const updateActiveLinks = (pageFunction, params) => {
   const header = document.querySelector('#app-header')
   if (!header) return
 
-  const pageName = pageFunction.name
+  let pageName = ''
+  if (pageFunction === Home) pageName = 'Home'
+  else if (pageFunction === Login) pageName = 'Login'
+  else if (pageFunction === SignUp) pageName = 'SignUp'
+  else if (pageFunction === Profile) pageName = 'Profile'
+  else if (pageFunction === EventDetail) pageName = 'EventDetail'
 
   const isLogged = !!localStorage.getItem('token')
   if (isLogged) {
