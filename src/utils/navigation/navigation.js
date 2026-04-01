@@ -36,7 +36,7 @@ const getPathFromFunction = async (pageFunction, params) => {
     const userContext = await getUserContext()
     const id = params[0]
 
-    if (id === userContext?.userProfile._id) {
+    if (id === userContext?.userProfile?._id) {
       return `/profile`
     } else {
       return `/profile/${id}`
