@@ -1,6 +1,10 @@
-> ⚠️ **Nota:** Este repositorio contiene únicamente el código del **Frontend**. Puedes encontrar el código del servidor y la configuración de la API en el [Repositorio del Backend](https://github.com/roliver97/FullStackJavascript_P10_Evently_backend).
+# 🎟️ Evently - Gestión de Eventos (Frontend)
 
-# 🎟️ Plataforma Full Stack - Gestión de Eventos (Frontend)
+## Plataforma Full Stack Javascript - Proyecto 10 - RTC
+
+> 🚀 **Deploy en vivo:** [https://evently-frontend-p10.vercel.app/](https://evently-frontend-p10.vercel.app/)
+
+> ⚠️ **Nota:** Este repositorio contiene únicamente el código del **Frontend**. Puedes encontrar el código del servidor y la configuración de la API en el [Repositorio del Backend](https://github.com/roliver97/FullStackJavascript_P10_Evently_backend).
 
 Interfaz de usuario para una aplicación web de gestión de eventos, construida con Vanilla JavaScript y Vite. La plataforma ofrece una experiencia Single Page Application (SPA) donde los usuarios pueden interactuar con eventos en tiempo real, gestionar su perfil y visualizar datos dinámicos consumidos desde una API REST.
 
@@ -48,7 +52,7 @@ Interfaz de usuario para una aplicación web de gestión de eventos, construida 
     Crea un archivo .env en la raíz del proyecto para definir la URL de tu API:
 
     ```bash
-    VITE_API_URL=http://localhost:3000/api/v1
+    VITE_API_URL=https://tu-api-en-vercel.app/api/v1
     ```
 
 4.  **Arranca el entorno de desarrollo de Vite:**
