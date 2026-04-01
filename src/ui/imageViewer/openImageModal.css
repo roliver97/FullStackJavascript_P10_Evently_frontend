@@ -1,0 +1,48 @@
+.image-viewer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.image-viewer-div {
+  width: 70vw;
+  height: 98vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  pointer-events: none; /* El div no debe bloquear los clicks al overlay de la imatge NO ha de bloquejar els clics de l'overlay */
+  padding: 100px;
+  border-radius: var(--rtc-border-radius-square);
+}
+
+.image-viewer-div img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  pointer-events: auto;
+  border-radius: var(--rtc-border-radius-square);
+  cursor: zoom-in;
+  transition: transform 0.1s ease;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.image-viewer-img.zoomed {
+  transform: scale(2.5);
+  cursor: zoom-out;
+  box-shadow: none;
+}
+
+.image-viewer-div:has(.image-viewer-img.zoomed) {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  pointer-events: auto;
+  cursor: zoom-out;
+}

@@ -1,0 +1,113 @@
+.login-form {
+  display: flex;
+  min-height: 80svh;
+  flex-direction: column;
+  gap: var(--rtc-gap-l);
+  background-color: var(--rtc-bgColorSecondary);
+  padding: var(--rtc-padding-xxl) var(--rtc-padding-3xl);
+  border: 2px solid var(--rtc-highlightColor);
+  border-radius: var(--rtc-border-radius-square);
+  justify-content: space-around;
+  text-align: center;
+  width: 100%;
+  max-width: 700px;
+}
+
+.login-form-div,
+.login-form-group,
+.login-form-input-div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rtc-gap-xs);
+  line-height: 1.5;
+}
+
+#login-form-title-group {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--rtc-gap-m);
+}
+
+#login-form-input-group {
+  gap: var(--rtc-gap-xl);
+}
+
+.login-input {
+  padding: var(--rtc-input-padding-s);
+  border: 2px solid var(--rtc-primaryColor);
+  border-radius: var(--rtc-border-radius-square);
+  transition: all 0.3s ease;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: var(--rtc-color-6);
+  box-shadow: 0 0 5px var(--rtc-color-6);
+}
+
+.login-label {
+  text-align: left;
+  font-weight: 600;
+}
+
+.login-submit-btn {
+  background-color: var(--rtc-highlightColorSecondary);
+  font-weight: 600;
+  padding: var(--rtc-padding-s);
+  margin-top: var(--rtc-margin-m);
+  border: 2px solid var(--rtc-highlightColor);
+  border-radius: var(--rtc-border-radius-square);
+}
+
+.login-signup-btn {
+  width: 100%;
+  padding: var(--rtc-padding-xs) 0;
+  background-color: transparent;
+  align-self: center;
+  border: none;
+  font-weight: 300;
+  font-size: 0.85rem;
+}
+
+.login-signup-btn span {
+  font-weight: 600;
+}
+
+.login-error-div {
+  background-color: var(--rtc-highlightColorSecondary);
+  border: 2px solid rgb(250, 99, 99);
+  padding: var(--rtc-padding-l);
+  display: flex;
+  flex-direction: column;
+  gap: var(--rtc-gap-s);
+}
+
+.login-error-div h3,
+.login-error-div h4 {
+  color: rgb(250, 99, 99);
+}
+.login-error-div h4:first-child {
+  font-weight: 600;
+}
+
+/*! MEDIA QUERIES */
+@media (max-width: 1800px) {
+  /* DESKTOP or less */
+}
+
+@media (max-width: 1024px) {
+  /* LAPTOP - TABLET or less */
+}
+
+@media (max-width: 769px) {
+  /* SMALL TABLET or less */
+  .login-form {
+    gap: var(--rtc-gap-m);
+    padding: var(--rtc-padding-l);
+    min-height: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  /* MOBILE or less */
+}

@@ -1,0 +1,126 @@
+#header-filter-form-overlay {
+  position: fixed;
+  cursor: pointer;
+  width: 100svw;
+  height: calc(100svh - 80px);
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Per sobre de tot! */
+}
+
+.header-filter-form-container {
+  background: var(--rtc-highlightColorSecondary);
+  padding: var(--rtc-padding-xl);
+  border-radius: 8px;
+  width: 100%;
+
+  max-width: 400px;
+  position: relative;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--rtc-border-radius-square);
+  gap: var(--rtc-gap-s);
+  border: 2px solid var(--rtc-highlightColor);
+}
+
+.header-filter-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rtc-gap-l);
+}
+
+.header-filter-form input,
+.header-filter-form select {
+  text-align: center;
+  color: var(--rtc-highlightColorSecondary);
+  padding: var(--rtc-padding-xs);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border-radius: var(--rtc-border-radius-square);
+  background: color-mix(in srgb, var(--rtc-color-2), transparent 20%);
+  border: 3px solid var(--rtc-color-2);
+}
+
+.header-filter-form input:focus,
+.header-filter-form select:focus {
+  outline: none;
+}
+
+.header-filter-form > div,
+.header-filter-form .filter-field {
+  display: flex;
+  gap: var(--rtc-gap-m);
+}
+
+.header-filter-form label {
+  font-weight: 500;
+}
+
+.header-filter-form-title-group,
+.header-filter-form-input-group,
+.header-filter-form .filter-field {
+  flex-direction: column;
+}
+
+.header-filter-form-title-group {
+  text-align: center;
+}
+
+.header-filter-form-actions-group button {
+  border-radius: var(--rtc-border-radius-circle);
+  font-weight: 300;
+  border: 2px solid var(--rtc-highlightColorSecondary);
+  padding: var(--rtc-padding-s);
+  background-color: var(--rtc-bgColorSecondary);
+  width: 100%;
+  font-weight: 500;
+}
+
+.header-filter-form-actions-group button:hover {
+  border: 2px solid var(--rtc-highlightColor);
+}
+
+.header-filter-form-actions-group #clear-filters-btn {
+  background-color: var(--rtc-highlightColorSecondary);
+}
+
+.header-filter-form-actions-group {
+  justify-content: space-between;
+}
+
+.header-filter-form .filter-field {
+  gap: var(--rtc-gap-s);
+}
+
+.header-filter-form-container button#close-filter {
+  width: 20px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border: none;
+  background-color: transparent;
+  font-weight: 800;
+}
+
+/*! MEDIA QUERIES */
+@media (max-width: 1800px) {
+  /* DESKTOP or less */
+}
+
+@media (max-width: 1024px) {
+  /* LAPTOP - TABLET or less */
+}
+
+@media (max-width: 769px) {
+  /* SMALL TABLET or less */
+}
+
+@media (max-width: 480px) {
+  /* MOBILE or less */
+  .header-filter-form-container {
+    padding: var(--rtc-padding-m);
+    max-width: 340px;
+  }
+}

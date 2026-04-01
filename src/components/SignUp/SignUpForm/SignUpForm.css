@@ -1,0 +1,114 @@
+.signup-form {
+  display: flex;
+  min-height: 90svh;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--rtc-gap-s);
+  background-color: var(--rtc-bgColorSecondary);
+  padding: var(--rtc-padding-l) var(--rtc-padding-3xl);
+  border: 2px solid var(--rtc-highlightColor);
+  border-radius: var(--rtc-border-radius-square);
+  justify-content: space-around;
+  text-align: center;
+  width: 100%;
+  max-width: 700px;
+}
+
+#signup-form-input-group {
+  gap: var(--rtc-gap-m);
+}
+
+.signup-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rtc-gap-xs);
+  line-height: 1.5;
+}
+
+.signup-form-input-div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rtc-gap-xs);
+  line-height: 1.5;
+}
+
+.signup-input {
+  padding: var(--rtc-input-padding-s);
+  border: 2px solid var(--rtc-primaryColor);
+  border-radius: var(--rtc-border-radius-square);
+  transition: all 0.3s ease;
+}
+
+.signup-input:focus {
+  outline: none;
+  border-color: var(--rtc-color-6); /* El teu nou violeta o cian */
+  box-shadow: 0 0 5px var(--rtc-color-6); /* Un suau efecte de resplendor */
+}
+
+.signup-label {
+  text-align: left;
+  font-weight: 600;
+}
+
+.signup-submit-btn {
+  background-color: var(--rtc-highlightColorSecondary);
+  font-weight: 600;
+  padding: var(--rtc-padding-s);
+  margin-top: var(--rtc-margin-m);
+  border: 2px solid var(--rtc-highlightColor);
+  border-radius: var(--rtc-border-radius-square);
+}
+
+.signup-login-btn {
+  width: 100%;
+  padding: var(--rtc-padding-xs) 0;
+  background-color: transparent;
+  align-self: center;
+  border: none;
+  font-weight: 300;
+  font-size: 0.85rem;
+}
+
+.signup-login-btn span {
+  font-weight: 600;
+}
+
+.signup-error-div {
+  background-color: var(--rtc-highlightColorSecondary);
+  border: 2px solid rgb(250, 99, 99);
+  margin-top: var(--rtc-margin-m);
+  padding: var(--rtc-padding-l);
+  display: flex;
+  flex-direction: column;
+  gap: var(--rtc-gap-s);
+}
+
+.login-error-div h3,
+.login-error-div h4 {
+  color: rgb(250, 99, 99);
+}
+.login-error-div h4 {
+  font-weight: 400;
+}
+
+/*! MEDIA QUERIES */
+@media (max-width: 1800px) {
+  /* DESKTOP or less */
+}
+
+@media (max-width: 1024px) {
+  /* LAPTOP - TABLET or less */
+}
+
+@media (max-width: 769px) {
+  /* SMALL TABLET or less */
+  .signup-form {
+    min-height: 0;
+    gap: var(--rtc-gap-xs);
+    padding: var(--rtc-padding-l);
+  }
+}
+
+@media (max-width: 480px) {
+  /* MOBILE or less */
+}

@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Asimovian&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* FONT FAMILY */
+  --font-sans:
+    'Montserrat', 'Roboto', ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  /* BRANDING COLORS */
+  --rtc-color-1: #f4effa;
+  --rtc-color-2: #ffffff;
+  --rtc-color-3: #000000;
+  --rtc-color-4: #c8b1e4;
+  --rtc-color-5: #51386e;
+  --rtc-color-6: #6e5f85;
+  --rtc-color-7: #2f184b;
+  --rtc-color-8: rgb(109, 109, 109);
+  --rtc-color-9: rgb(189, 189, 189);
+  --rtc-color-10: rgb(41, 41, 41);
+  --rtc-color-11: rgb(78, 78, 78);
+
+  /* PRIMARY COLOR */
+  --rtc-primaryColor: var(--rtc-color-1);
+  /* TEXT COLORS */
+  --rtc-textColor: var(--rtc-color-2);
+  --rtc-textColorSecondary: var(--rtc-color-3);
+
+  /* HIGHLIGHT COLORS */
+  --rtc-highlightColor: var(--rtc-color-4);
+  --rtc-highlightColorSecondary: var(--rtc-color-5);
+
+  /* BACKGROUND COLORS */
+  --rtc-bgColor: var(--rtc-color-6);
+  --rtc-bgColorSecondary: var(--rtc-color-7);
+
+  /* BORDER RADIUS */
+  --rtc-border-radius-square: 4px;
+  --rtc-border-radius-circle: 20px;
+
+  /* SPACINGS */
+  --rtc-margin-xs: 5px;
+  --rtc-margin-s: 10px;
+  --rtc-margin-m: 20px;
+  --rtc-margin-l: 30px;
+  --rtc-margin-xl: 50px;
+  --rtc-margin-xxl: 75px;
+  --rtc-margin-3xl: 100px;
+
+  --rtc-padding-xs: 5px;
+  --rtc-padding-s: 10px;
+  --rtc-padding-m: 20px;
+  --rtc-padding-l: 30px;
+  --rtc-padding-xl: 50px;
+  --rtc-padding-xxl: 75px;
+  --rtc-padding-3xl: 100px;
+
+  --rtc-button-padding-xs: 5px 20px;
+  --rtc-button-padding-s: 10px 30px;
+  --rtc-button-padding-m: 15px 40px;
+  --rtc-button-padding-l: 20px 50px;
+
+  --rtc-input-padding-xs: 5px 20px;
+  --rtc-input-padding-s: 10px 20px;
+  --rtc-input-padding-m: 15px 20px;
+  --rtc-input-padding-l: 20px 20px;
+
+  --rtc-gap-xs: 10px;
+  --rtc-gap-s: 20px;
+  --rtc-gap-m: 30px;
+  --rtc-gap-l: 40px;
+  --rtc-gap-xl: 50px;
+  --rtc-gap-xxl: 75px;
+  --rtc-gap-3xl: 100px;
+}
+
+/* CONFIGURACIONES GENERALES*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* 1rem = 16px */
+}
+
+input,
+textarea,
+select {
+  font-size: 1rem; /* iOS fuerza un zoom automático si algun input tiene un font-size inferior a 16px */
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--rtc-highlightColorSecondary);
+  color: var(--rtc-textColor);
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  margin: 0;
+}
+
+p,
+label,
+button,
+a {
+  font-size: 1rem;
+  font-family: var(--font-sans);
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+}
+
+h5,
+h6 {
+  font-size: 1rem;
+}
+
+p,
+label,
+button,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--rtc-textColor);
+}
+
+ul,
+ol,
+a {
+  list-style: none;
+  text-decoration: none;
+}
+
+input {
+  font-family: var(--font-sans);
+}
+
+/* CONFIGURACIONES ESPECÍFICAS*/
+
+.hidden {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+#app-main {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: filter 0.8s ease;
+  width: 100%;
+  flex-grow: 1;
+  min-height: calc(100svh - 80px); /* Header height 80px */
+}
+
+.is-blurred {
+  filter: blur(8px);
+  pointer-events: none;
+  user-select: none;
+}
+
+.is-blurred-dark {
+  filter: blur(2px);
+  pointer-events: none;
+  user-select: none;
+}
+
+#app-main::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.8s ease;
+  z-index: 10;
+}
+
+#app-main.is-blurred-dark::after {
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.hide-on-mobile {
+  display: flex;
+}
+.show-on-mobile {
+  display: none;
+}
+
+/*! MEDIA QUERIES */
+@media (max-width: 1800px) {
+  /* DESKTOP or less */
+  .container {
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* LAPTOP - TABLET or less */
+  .container {
+    width: 100%;
+    max-width: 85%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 769px) {
+  /* SMALL TABLET or less */
+  .container {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  /* MOBILE or less */
+  html {
+    font-size: 14px; /* 1rem = 16px */
+  }
+  input,
+  textarea,
+  select {
+    font-size: 16px; /* mantenemos 16px para los inputs ya que iOS fuerza un zoom automático si algun input tiene un font-size inferior a 16px */
+  }
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  .hide-on-mobile {
+    display: none !important;
+  }
+  .show-on-mobile {
+    display: flex !important;
+  }
+}
