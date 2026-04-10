@@ -61,10 +61,22 @@ export const scrollThroughProfileSections = (sectionId) => {
   if (!sectionId) return
 
   const target = document.getElementById(sectionId)
+  const container = document.getElementById('profile-content-container')
+
   if (target) {
     window.isScrollingByClick = true
     setActiveBtnByWindowView(sectionId)
-    target.scrollIntoView({ behavior: 'smooth' })
+    const isMobile = window.innerWidth <= 1024
+
+    if (isMobile) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    } else {
+      const desktopOffset = target.offsetTop - container.offsetTop
+      container.scrollTo({
+        top: desktopOffset,
+        behavior: 'smooth'
+      })
+    }
 
     setTimeout(() => {
       window.isScrollingByClick = false

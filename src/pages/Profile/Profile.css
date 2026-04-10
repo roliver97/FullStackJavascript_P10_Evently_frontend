@@ -1,6 +1,5 @@
 #app-main:has(.profile-page) {
   background-color: var(--rtc-bgColorSecondary);
-  border-top: 2px solid var(--rtc-highlightColorSecondary);
 }
 
 .profile-page {

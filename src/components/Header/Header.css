@@ -1,3 +1,7 @@
+#app:has(.profile-page) #app-header {
+  border-bottom: 2px solid var(--rtc-highlightColorSecondary);
+}
+
 #app-header {
   background-color: var(--rtc-bgColorSecondary);
   z-index: 100;
@@ -385,16 +389,16 @@ span.user-username {
   .logo-img {
     height: 1.75rem;
   }
-}
-
-@media (max-width: 769px) {
-  /* SMALL TABLET or less */
   #header-guest-zone .show-on-mobile {
     display: flex;
   }
   #header-guest-zone .hide-on-mobile {
     display: none;
   }
+}
+
+@media (max-width: 769px) {
+  /* SMALL TABLET or less */
 }
 
 @media (max-width: 480px) {

@@ -5,6 +5,7 @@ import { Header } from './components/Header/Header.js'
 import { checkSessionAPI } from './api/auth.js'
 import { router } from './router/router.js'
 import { renderError } from './ui/StatusMessagesUI/StatusMessagesUI.js'
+import { Footer } from './components/Footer/Footer.js'
 
 const init = async () => {
   const app = document.body
@@ -19,6 +20,8 @@ const init = async () => {
     mainElement.id = 'app-main'
     app.appendChild(mainElement)
   }
+
+  Footer()
 
   router()
 }
